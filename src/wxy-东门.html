@@ -45,6 +45,12 @@
                     document.getElementById("tim317").innerHTML = "已作废";
                 }
             }
+            function checkTime(i) {
+        if (i < 10) {
+          i = "0" + i;
+        }
+        return i;
+      }
         </script>
     </head>
 
@@ -95,7 +101,18 @@
                         <span style="font-size: 12px; color: #333"
                             >获取时间：</span
                         ><span style="font-size: 16px; color: #a0a"
-                            >01月03日 14:50　</span
+                            ><script type="text/javascript">
+                                var nowDate = new Date();
+                                var MM = nowDate.getMonth() + 1;
+                                var dd = nowDate.getDate();
+                                var hour = nowDate.getHours();
+                                var mm = nowDate.getMinutes();
+                                MM = checkTime(MM);
+                                dd = checkTime(dd);
+                                mm = checkTime(mm);
+                                var s = MM + "月" + dd + "日" + " " + hour + ":" + mm;
+                                document.write(s);
+                              </script></span
                         ><span style="font-size: 12px; color: #333"
                             >有效期剩余 </span
                         ><span
@@ -106,7 +123,7 @@
                                 font-weight: 500;
                                 font-family: 黑体;
                             "
-                            >2分53秒</span
+                            >10分00秒</span
                         >
                     </div>
                     <div
